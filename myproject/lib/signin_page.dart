@@ -111,7 +111,6 @@ class SignInPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 8),
 
-                /// โลโก้ (ตามรูป: ขนาดประมาณ 100)
                 Image.asset('assets/images/logo.png', height: 100),
                 const SizedBox(height: 18),
 
@@ -158,8 +157,6 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 6),
-
-                /// เส้นใต้เฉพาะ active (TabBar ทำให้แล้ว) + ระยะตามภาพ
                 const SizedBox(height: 8),
 
                 /// ฟอร์ม
