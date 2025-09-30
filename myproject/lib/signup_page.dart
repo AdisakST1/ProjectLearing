@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -92,9 +93,8 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                         SizedBox(height: 6),
-                        // ความกว้าง/หนาใกล้กับรูป
                         SizedBox(
-                          width: 96, // ~ยาวพอๆกับคำ
+                          width: 96,
                           child: Divider(
                             thickness: 2,
                             height: 2,
@@ -151,11 +151,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       shadowColor: Colors.black.withOpacity(0.08),
                     ),
                     onPressed: () {
-                      // TODO: validate & submit
-                      debugPrint("Username: ${_username.text}");
-                      debugPrint("Password: ${_password.text}");
-                      debugPrint("Repeat: ${_repeat.text}");
-                      debugPrint("Nickname: ${_nickname.text}");
+                      // ✅ เด้งไปหน้า HomePage
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (_) => HomePage()),
+                      );
                     },
                     child: const Text(
                       "Confirm",
@@ -201,18 +201,12 @@ class _NeumorphicInput extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         boxShadow: const [
           BoxShadow(
-            // เงาหลักด้านล่าง
-            color: Color(0x1A000000), // 10% black
+            color: Color(0x1A000000),
             blurRadius: 18,
             spreadRadius: 1,
             offset: Offset(0, 6),
           ),
-          BoxShadow(
-            // ไฮไลต์ด้านบนให้ฟุ้ง
-            color: Colors.white,
-            blurRadius: 6,
-            offset: Offset(0, -2),
-          ),
+          BoxShadow(color: Colors.white, blurRadius: 6, offset: Offset(0, -2)),
         ],
       ),
       alignment: Alignment.center,
